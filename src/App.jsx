@@ -4,6 +4,7 @@ import Home from './pages/Home';
 import SingleMoviePage from './pages/SingleMoviePage';
 import MasterLayout from './pages/MasterLayout';
 import Error from './pages/Error';
+import { loader as MovieLoader } from './pages/Home';
 
 import {
   createBrowserRouter,
@@ -13,7 +14,7 @@ import {
 } from 'react-router-dom';
 
 const router = createBrowserRouter(createRoutesFromElements(<Route path = "/" element = {<MasterLayout/>}>
-  <Route index path = "/" element={<Home/>} />
+  <Route index path = "/" element={<Home/>} loader={MovieLoader} />
   <Route path = "/details/:imdbId" element = {<SingleMoviePage/>} />
 </Route>))
 
