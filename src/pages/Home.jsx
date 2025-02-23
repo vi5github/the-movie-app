@@ -29,7 +29,6 @@ function Home() {
   const data = useLoaderData();
   return (
     <div>
-        HomePage
         <SearchForm searchTerm={data.searchTerm}/>
         <MovieList data={data}/>
     </div>
