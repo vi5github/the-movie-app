@@ -1,13 +1,15 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Outlet } from 'react-router-dom';
+import { useNavigation } from 'react-router-dom';
 
 
 const MasterLayout = (props) => {
+  const navigation = useNavigation();
   return (
     <nav>
         <Link to="/">Movie Search</Link>
-        <Outlet/>
+        {navigation.state === 'loading' ? <h1> Loading... </h1> : <Outlet/>}
     </nav>
 
   )
