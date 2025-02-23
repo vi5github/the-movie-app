@@ -1,4 +1,5 @@
 import React from 'react'
+import MovieCard from './MovieCard';
 
 const MovieList = ({data}) => {
   const {movieApiResponse, error, isError} = data;
@@ -15,9 +16,9 @@ const MovieList = ({data}) => {
   return (
     <>
     {
-      movieApiResponse.Search.map(movie => (<p>
-        {movie.Title}
-      </p>))
+      movieApiResponse.Search.map((movie, index) => (
+        <MovieCard key={index} {...movie}/>
+      ))
     }
     </>
     // <div>MovieList</div>
