@@ -13,7 +13,8 @@ import {
   RouterProvider
 } from 'react-router-dom';
 
-const router = createBrowserRouter(createRoutesFromElements(<Route path = "/" element = {<MasterLayout/>}>
+const router = createBrowserRouter(createRoutesFromElements(
+<Route path = "/" element = {<MasterLayout/>} errorElement={<Error/>}>
   <Route index path = "/" element={<Home/>} loader={MovieLoader} />
   <Route path = "/details/:imdbId" element = {<SingleMoviePage/>} />
 </Route>))
